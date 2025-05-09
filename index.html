@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Portal</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: url('assets/bg.jpg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+        background: rgba(0, 0, 0, 0.4); /* Optional dark overlay */
+    }
+
+    .logo {
+        width: 300px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+</head>
+<body>
+
+
+
+    <!-- Content -->
+    <div class="container">
+        <a href="login.php">
+            <img src="assets/logo.png" alt="Portal Logo" class="logo">
+        </a>
+        <h1>Welcome to the EduSpark</h1>
+        <p>Click the logo to login</p>
+    </div>
+
+</body>
+</html>

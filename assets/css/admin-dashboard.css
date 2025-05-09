@@ -1,0 +1,274 @@
+body {
+    background: linear-gradient(to bottom right, #eef2f7, #fdfdfd);
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    display: none;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.header h1 {
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Dashboard Main Shifted Layout */
+.main-content.top-shift {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+    background: linear-gradient(145deg, #f2f4f8, #e8ecf3);
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.main-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    z-index: -1;
+}
+
+.dashboard-card {
+    background: #fff;
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Grid-based card layout */
+.cards.center-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+
+.cards.center-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+    padding: 0 20px; /* Added padding to prevent overflow */
+    box-sizing: border-box; /* Ensures the padding doesn't affect the width */
+    overflow: hidden; /* Prevents overflow */
+}
+
+
+/* Individual cards */
+.card {
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin: 0 0 10px;
+}
+
+.card p {
+    font-size: 34px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Specific card styles */
+.users-card {
+    background-color: #ffe9d6;
+    border-left: 6px solid #f9a825;
+}
+
+.events-card {
+    background-color: #ffdfde;
+    border-left: 6px solid #e57373;
+}
+
+.users-card h3,
+.users-card p,
+.events-card h3,
+.events-card p {
+    color: #333;
+}
+
+/* Progress bar */
+.progress-bar {
+    height: 6px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 16px;
+    overflow: hidden;
+}
+
+.progress-bar > div {
+    height: 100%;
+    background-color: #7b61ff;
+    border-radius: 5px;
+}
+
+/* Button-style links (optional, for home view) */
+.card-button {
+    background: #4a90e2;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 260px;
+    text-align: center;
+}
+
+.card-button:hover {
+    background: #357ABD;
+    transform: scale(1.05);
+}
+
+.card-button.logout {
+    background: #e74c3c;
+}
+
+.card-button.logout:hover {
+    background: #c0392b;
+}
+
+/* Form Card */
+.form-card {
+    width: 600px;
+    background-color: #fff;
+    padding: 50px 60px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+.form-card h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+    color: #333;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 22px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    margin-bottom: 18px;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-card button {
+    width: 100%;
+    background-color: #6c5ce7;
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-card button:hover {
+    background-color: #5a4bd8;
+}
+
+.success, .error {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+/* Table Styling */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.styled-table thead tr {
+    background-color: #6c5ce7;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.styled-table td a {
+    color: #6c5ce7;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.styled-table td a:hover {
+    text-decoration: underline;
+}
